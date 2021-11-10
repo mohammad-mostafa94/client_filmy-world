@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
+    const {user,logOut} = useAuth();
     return (
         <div className="">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,8 +36,10 @@ const Navigation = () => {
                             </span>
                         </li>
                         <li className="nav-item me-5">
+                        {
+                            user.email ?<Link  className="nav-link text-info" onClick={logOut}> Logout</Link> :<Link  className="nav-link text-info" to="/login"> Login</Link>
+                        }
                         
-                        <Link  className="nav-link text-info" to="/login"> Login</Link>
                     
                     
                         </li>
