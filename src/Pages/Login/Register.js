@@ -26,7 +26,7 @@ const Register = () => {
         e.preventDefault();
     };
 
-    const handleGoogleSignIn = (location,history) =>{
+    const handleGoogleSignIn = () =>{
         googleSignIn(location,history);
     }
     return (
@@ -78,23 +78,23 @@ const Register = () => {
                         name="password2"
                         onBlur={handleOnBlur}
                         />
-                        <Button sx={{width:"90%",mt:1}} type="submit" variant="contained">Registration</Button>
+                        <Button sx={{width:"90%",mt:1, backgroundColor:"#2FFBFB"}} type="submit" >Registration</Button>
 
                         <Link  style={{textDecoration:"none"}} to ="/login">
                             
-                            <Button className="mt-3" variant="text">Already register ? Please Login</Button>
+                            <Button className="mt-3" variant="text" >Already register ? Please Login</Button>
                         </Link>
 
-                        <Button sx={{width:"90%",mt:1}} onClick={handleGoogleSignIn} variant="contained">google Sign In</Button>
+                        <Button sx={{width:"90%",mt:1, backgroundColor:"#2FFBFB"}} onClick={handleGoogleSignIn} >google Sign In</Button>
                 </form>
                 
-                {isLoading && <CircularProgress />}
-                {
-                    user?.email &&  <Alert severity="success">Successfully created user</Alert>
-                }
-                {
-                    authError &&  <Alert severity="error">{authError}</Alert>
-                }
+                    {isLoading && <CircularProgress />}
+                    {
+                        user?.email &&  <Alert severity="success">User created successfully.</Alert>
+                    }
+                    {
+                        authError &&  <Alert severity="error">{authError}</Alert>
+                    }
 
                 </Grid>
             </Grid>

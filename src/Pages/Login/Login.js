@@ -63,7 +63,7 @@ const Login = () => {
                 </form>
                 {isLoading && <CircularProgress />}
                 {
-                    user?.email &&  <Alert severity="success">User successfully created </Alert>
+                    user?.email &&  <Alert severity="success">User login successfully </Alert>
                 }
                 {
                     authError &&  <Alert severity="error">{authError}</Alert>

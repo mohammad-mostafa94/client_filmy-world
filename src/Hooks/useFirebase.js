@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError , setAuthError] = useState('');
-    const [admin, setAdmin] = useState(false);
+    // const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
 
     const auth = getAuth();
@@ -24,8 +24,13 @@ const useFirebase = () => {
             
             const newUser = {email,displayName:name};
             setUser(newUser);
+
+
             // send data to database
-            saveData(email,name,'POST');
+            // saveData(email,name,'POST');
+
+
+
             // send name firebase after creation
             updateProfile(auth.currentUser, {
                 displayName: name
@@ -64,8 +69,10 @@ const useFirebase = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 setAuthError('');
-                const user = result.user;
-                saveData(user.email,user.displayName,'PUT');
+                // const user = result.user;
+
+                // saveData(user.email,user.displayName,'PUT');
+
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
             }).catch((error) => {
@@ -74,8 +81,8 @@ const useFirebase = () => {
     }
 
     //observer user state change
-    useEffect(()=>{
-      const unsubscribe = onAuthStateChanged(auth, (user) => {
+    useEffect(()=>{                         
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
 
@@ -93,8 +100,9 @@ const useFirebase = () => {
             return () => unsubscribe;
     },[]);
 
-    const saveData = (email,displayName, method) => {
-        const user = {email, displayName};
+
+    // const saveData = (email,displayName, method) => {
+    //     const user = {email, displayName};
         // fetch("http://localhost:5000/users",{
         //     method:method,
         //     headers:{
@@ -103,7 +111,7 @@ const useFirebase = () => {
         //     body: JSON.stringify(user)
         // })
         // .then()
-    }
+    // }
 
 
     // useEffect(() => {
@@ -116,6 +124,8 @@ const useFirebase = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful.
+            // const destination = location?.state?.from || '/';
+                // history.replace(destination);
             }).catch((error) => {
                 // An error happened.
             }).finally(()=>setIsLoading(false));
@@ -124,7 +134,7 @@ const useFirebase = () => {
     return (
         {
             user,
-            admin,
+            // admin,
             token,
             authError,
             isLoading,

@@ -5,6 +5,10 @@ import './Navigation.css';
 
 const Navigation = () => {
     const {user,logOut} = useAuth();
+
+    // const location = useLocation();
+    // const history = useHistory();
+
     return (
         <div className="">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,16 +23,16 @@ const Navigation = () => {
                     <ul className="navbar-nav ms-auto me-5 mb-lg-0">
                         
                         <li className="nav-item me-2">
-                            <Link className="nav-link" to="/product">Product</Link>
+                            <Link to="/product" className="nav-link" >Product</Link>
                         </li>
                         <li className="nav-item me-2">
-                            <Link className="nav-link" to="/service">Service</Link>
+                            <Link to="/service" className="nav-link" >Service</Link>
                         </li>
                         <li className="nav-item me-2">
-                            <Link className="nav-link" to="/">About</Link>
+                            <Link to="/"  className="nav-link">About</Link>
                         </li>
                         <li className="nav-item me-2">
-                            <Link className="nav-link" to="/">Contact</Link>
+                            <Link to="/"  className="nav-link">Contact</Link>
                         </li>
                         <li className="nav-item me-2">
                             <span className="nav-link">
@@ -37,13 +41,9 @@ const Navigation = () => {
                         </li>
                         <li className="nav-item me-5">
                         {
-                            user.email ?<Link  className="nav-link text-info" onClick={logOut}> Logout</Link> :<Link  className="nav-link text-info" to="/login"> Login</Link>
+                            user.email ?<Link to="/" className="nav-link text-info" onClick={logOut}> Logout</Link> :<Link to="/login" className="nav-link text-info" > Login</Link>
                         }
-                        
-                    
-                    
                         </li>
-
                         
                     </ul>
                     </div>
