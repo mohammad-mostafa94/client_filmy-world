@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 const Register = () => {
     const [loginData, setLoginData] = useState({});
     const {registerUser, isLoading,authError,user,googleSignIn} = useAuth();
-    const location = useLocation()
+    const location = useLocation();
     const history = useHistory();
 
     const handleOnBlur = e =>{
@@ -26,21 +26,17 @@ const Register = () => {
         e.preventDefault();
     };
 
-    const handleGoogleSignIn = () =>{
-        googleSignIn(location,history);
-    }
     return (
         <Container>
             <Grid container spacing={2}>
             <Grid item xs={12} md ={6}>
-                    <img className="mw-100 mh-100" src="https://i.ibb.co/q9zkDwB/bicycle-login.png" alt="" />
+                    <img className="mw-100 mh-100" src="https://i.ibb.co/Sfvxdfg/login.png" alt="" />
                 </Grid>
                 <Grid item xs={12} md ={6}>
                 <Typography sx={{mt:8, mb:5}} variant="h5" gutterBottom>
                     Registration Form
                 </Typography>
-                <form onSubmit={handleSubmitLogin} >
-                {/* {!isLoading && <form onSubmit={handleSubmitLogin} > */}
+                {!isLoading && <form onSubmit={handleSubmitLogin} >
                     <TextField
                         sx={{my:1}} 
                         id="standard-basic" 
@@ -78,15 +74,13 @@ const Register = () => {
                         name="password2"
                         onBlur={handleOnBlur}
                         />
-                        <Button sx={{width:"90%",mt:1, backgroundColor:"#2FFBFB"}} type="submit" >Registration</Button>
+
+                        <button style={{ width:"90%"}} type="submit" className="btn btn-warning mt-1 text-white">Registration</button>
 
                         <Link  style={{textDecoration:"none"}} to ="/login">
-                            
                             <Button className="mt-3" variant="text" >Already register ? Please Login</Button>
                         </Link>
-
-                        <Button sx={{width:"90%",mt:1, backgroundColor:"#2FFBFB"}} onClick={handleGoogleSignIn} >google Sign In</Button>
-                </form>
+                </form>}
                 
                     {isLoading && <CircularProgress />}
                     {

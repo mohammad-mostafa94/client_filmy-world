@@ -14,7 +14,7 @@ const Navigation = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
                     <Link className="navbar-brand" to="/">
-                        <span className="fs-4 text-info">RaceZone Bike</span>
+                        <span className="fs-4 text-warning">FilmyWorld</span>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -23,10 +23,7 @@ const Navigation = () => {
                     <ul className="navbar-nav ms-auto me-5 mb-lg-0">
                         
                         <li className="nav-item me-2">
-                            <Link to="/product" className="nav-link" >Product</Link>
-                        </li>
-                        <li className="nav-item me-2">
-                            <Link to="/service" className="nav-link" >Service</Link>
+                            <Link to="/movies" className="nav-link" >Movies</Link>
                         </li>
                         <li className="nav-item me-2">
                             <Link to="/"  className="nav-link">About</Link>
@@ -41,7 +38,12 @@ const Navigation = () => {
                         </li>
                         <li className="nav-item me-5">
                         {
-                            user.email ?<Link to="/" className="nav-link text-info" onClick={logOut}> Logout</Link> :<Link to="/login" className="nav-link text-info" > Login</Link>
+                            user.email ?<span>
+                            
+                            <Link to="/dashboard" className="nav-link text-warning">hi, {user.displayName}</Link>
+                            <Link to="/dashboard" className="nav-link text-warning" >Dashboard</Link>
+                            <Link to="/" className="nav-link text-warning" onClick={logOut}> Logout</Link>
+                            </span> :<Link to="/login" className="nav-link text-warning" > Login</Link>
                         }
                         </li>
                         

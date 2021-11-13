@@ -26,11 +26,11 @@ const Login = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item xs={12} md ={6}>
-                    <img className="mw-100 mh-100" src="https://i.ibb.co/q9zkDwB/bicycle-login.png" alt="" />
+                    <img className="mw-100 mh-100" src="https://i.ibb.co/Sfvxdfg/login.png" alt="" />
                 </Grid>
                 <Grid item xs={12} md ={6}>
-                <Typography sx={{mt:8, mb:5}} variant="h5" gutterBottom>
-                    Login
+                <Typography sx={{mt:8, mb:5,text:"white"}} variant="h5" gutterBottom>
+                    <span className="text-white">Login</span>
                 </Typography>
                 <form onSubmit={handleSubmitLogin} >
                     <TextField
@@ -53,8 +53,8 @@ const Login = () => {
                         onBlur={handleChange}
                         />
 
-                        <Button sx={{width:"90%", backgroundColor:"#2FFBFB", mt:1}} type="submit" >Login</Button>
 
+                        <button style={{ width:"90%"}} type="submit" className="btn btn-warning mt-1 text-white">Login</button>
                         <Link  style={{textDecoration:"none"}} to ="/register">
                             
                             <Button className="mt-3" variant="text">New User ? Please Register</Button>
