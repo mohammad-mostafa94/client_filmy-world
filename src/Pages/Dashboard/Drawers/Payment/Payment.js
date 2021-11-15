@@ -3,9 +3,9 @@ import Drawers from '../Drawers';
 
 const Payment = () => {
     return (
-        <div className="container row">
+        <div className="row">
             <Drawers></Drawers>
-            <div className="col-md-8">
+            <div className="col-md-9 col-sm-12 m-3">
                 <div className="row">
                     <div className="col-sm-12 col-md-6">
                         <img className="img-fluid h-100" src="https://i.ibb.co/brmJPjw/payment.png" alt="" />

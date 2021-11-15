@@ -16,10 +16,10 @@ body {
     font-size: 17px;
 }
 
-.navbar a:hover {
+/* .navbar a:hover {
     background-color: rgb(165, 159, 159);
     border-radius:10px;
-}
+} */
 
 
 .active {

@@ -3,11 +3,14 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AuthProvider from "./contexts/AuthProvider";
+import AddAProduct from "./Pages/Dashboard/AddAProduct/AddAProduct";
 import Drawers from "./Pages/Dashboard/Drawers/Drawers";
 import Orders from "./Pages/Dashboard/Drawers/Orders/Orders";
 import Payment from "./Pages/Dashboard/Drawers/Payment/Payment";
 import Review from "./Pages/Dashboard/Drawers/Review/Review";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
+import DeleteProduct from "./Pages/Dashboard/ManageAll/DeleteProduct/DeleteProduct";
+import ManageAll from "./Pages/Dashboard/ManageAll/ManageAll";
 import HomePage from './Pages/HomePage/HomePage';
 import NotFound from "./Pages/HomePage/Notfound/Notfound";
 import PrivateRoute from "./Pages/HomePage/PrivateRoute/PrivateRoute";
@@ -23,31 +26,31 @@ function App() {
   return (
     <div>
       <AuthProvider>
-      <Router>
-        <Navigation/>
+        <Router>
+          <Navigation />
           <Switch>
-            <Route exact path="/" component={HomePage}/>
-            <Route exact path="/home" component={HomePage}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/register" component={Register}/>
-            <Route exact path="/movies" component={Movies}/>
-            
-            <PrivateRoute exact path="/dashboard" component={Drawers}/>
-            <PrivateRoute exact path="/orders" component={Orders}/>
-            <PrivateRoute exact path="/reviews" component={Review}/>
-            <PrivateRoute exact path="/payment" component={Payment}/>
-            
-            <AdminRoute exact path="/admin" component={MakeAdmin}/>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/movies" component={Movies} />
 
-            
-            
-            <PrivateRoute  exact path="/film/:filmId">
-                <MovieDetails></MovieDetails>
-            </PrivateRoute>
-            <Route path="*" component ={NotFound}/>
-        </Switch>
-        <Footer/>
-    </Router>
+            <PrivateRoute exact path="/dashboard" component={Drawers} />
+            <PrivateRoute exact path="/orders" component={Orders} />
+            <PrivateRoute exact path="/reviews" component={Review} />
+            <PrivateRoute exact path="/payment" component={Payment} />
+            <PrivateRoute exact path="/film/:filmId" component={MovieDetails} />
+
+            <AdminRoute exact path="/makAdmin" component={MakeAdmin} />
+            <AdminRoute exact path="/addProduct" component={AddAProduct} />
+            <AdminRoute exact path="/allOrders" component={ManageAll} />
+            <AdminRoute exact path="/deleteProduct" component={DeleteProduct} />
+
+
+            <Route path="*" component={NotFound} />
+          </Switch>
+          <Footer />
+        </Router>
       </AuthProvider>
     </div>
   );

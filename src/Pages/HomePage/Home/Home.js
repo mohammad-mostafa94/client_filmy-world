@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Loader from "react-loader-spinner";
+import { Circle } from 'react-spinners-css';
 import { Link } from 'react-router-dom';
 import banner1 from '../../../images/banner (1).jpg';
 import banner2 from '../../../images/banner (2).jpg';
@@ -13,14 +13,14 @@ const Home = () => {
     const [films, setFilms] = useState([]);
     useEffect(() => {
         fetch('https://vast-mesa-82001.herokuapp.com/filmy')
-        .then(res => res.json())
-        .then((data) => setFilms(data))
-    },[]);
-    const bestFilms = films.slice(0,6);
+            .then(res => res.json())
+            .then((data) => setFilms(data))
+    }, []);
+    const bestFilms = films.slice(0, 6);
     return (
         <div className="container">
             <div className="row justify-content-between align-items-center">
-            
+
                 <div id="carouselExampleIndicators" className="col-md-7 carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -70,32 +70,20 @@ const Home = () => {
                 </div>
             </div>
             <div className="py-4 mt-5">
-                <h1 className="text-warning">Our Top Sellers</h1>
+                <h1 className="text-warning text-center">Our Top Sellers</h1>
                 <div className="mt-4 row justify-content-between g-4">
-                {/* {
-                    bestFilms.map(nowShow => (
-                        <BestFilms key={nowShow.id} show={nowShow}></BestFilms>
-                    ))
-                } */}
 
-                {
-                            (bestFilms.length === 0) ? (
-                                <Loader
-                                    type="Puff"
-                                    color="#00BFFF"
-                                    height={100}
-                                    width={100}
-                                    timeout={5000} //5 secs
-                                />
-                                
-                            ) : (
-                                bestFilms.map(nowShow => <BestFilms
-                            key = {nowShow._id}
-                            nowShow = {nowShow}>
+                    {
+                        (bestFilms.length === 0) ? (
+                            <Circle color="#be97e8" size={200} />
+                        ) : (
+                            bestFilms.map(nowShow => <BestFilms
+                                key={nowShow._id}
+                                nowShow={nowShow}>
                             </BestFilms>)
-                            )
-                            
-                        }
+                        )
+
+                    }
                 </div>
             </div>
         </div>

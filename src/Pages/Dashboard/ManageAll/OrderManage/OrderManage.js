@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Order = ({ order, handleDelete }) => {
+const OrderManage = ({ order, handleDelete, handleStatus }) => {
 
     const { name, email, price, userName, status } = order;
-    console.log(status);
     return (
         <div className="col-sm-12 col-md-4">
             <div className="card shadow h-100 " >
@@ -15,10 +14,10 @@ const Order = ({ order, handleDelete }) => {
                     <button onClick={() => handleDelete(order._id)} className="card-link btn btn-warning">Delete</button>
                     <p>Status:
                         {
-                            status ? (<span className="text-info">Shipped</span>) : (<span className="text-danger">Pending</span>)
+                            status ? (<span className="text-info">Approved</span>) : (<span className="text-danger">Pending</span>)
                         }
                     </p>
-
+                    <button onClick={() => handleStatus(order._id)} className="card-link btn btn-warning">Approved</button>
 
                 </div>
             </div>
@@ -26,4 +25,4 @@ const Order = ({ order, handleDelete }) => {
     );
 };
 
-export default Order;
+export default OrderManage;
