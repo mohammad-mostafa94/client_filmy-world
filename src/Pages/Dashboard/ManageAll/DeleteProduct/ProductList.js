@@ -5,7 +5,7 @@ const ProductList = ({ film, handleDelete }) => {
     const { name, lang, price, director } = film;
     // const {name,lang,img,price,director} = film;
     return (
-        <div className="col-sm-12 col-md-4">
+        <div className="col-sm-12 col-md-4 mb-2">
             <div className="card shadow h-100 " >
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

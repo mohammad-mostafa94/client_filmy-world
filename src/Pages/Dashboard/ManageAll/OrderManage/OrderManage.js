@@ -4,7 +4,7 @@ const OrderManage = ({ order, handleDelete, handleStatus }) => {
 
     const { name, email, price, userName, status } = order;
     return (
-        <div className="col-sm-12 col-md-4">
+        <div className="col-sm-12 col-md-4 mb-2">
             <div className="card shadow h-100 " >
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

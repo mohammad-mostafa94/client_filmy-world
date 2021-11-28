@@ -5,41 +5,63 @@ import useAuth from '../../../Hooks/useAuth';
 const Drawers = () => {
     const { logOut, admin } = useAuth();
     return (
-        <div className="container col-md-2">
-            <div>
+
+        <div className="col-lg-3 bg-warning ">
+            <div className="mt-5">
                 {
                     admin ? (
-                        <span>
-                            <Link to="/addProduct" className="btn me-4 ">Add a product</Link>
-                            <div className="my-3 d-none d-md-block"> </div>
-                            <Link to="/deleteProduct" className="btn me-4 ">Manage product</Link>
-                            <div className="my-3 d-none d-md-block"> </div>
-                            <Link to="/allOrders" className="btn me-4 ">Manage All Orders</Link>
+                        <span className="mt-4">
+
+                            <Link to="/allOrders" className="btn me-4  d-block">
+                                <button className="btn btn-info text-white p-3">Manage All Orders</button>
+                            </Link>
                             <div className="my-3 d-none d-md-block"></div>
-                            <Link to="/makAdmin" className="btn me-4 ">Make Admin</Link>
+
+                            <Link to="/manageProduct" className="btn me-4 d-block">
+                                <button className="btn btn-info text-white p-3">Manage product</button>
+                            </Link>
+                            <div className="my-3 d-none d-md-block"> </div>
+
+                            <Link to="/addProduct" className="btn me-4 d-block">
+                                <button className="btn btn-info text-white p-3">Add a product</button>
+                            </Link>
+                            <div className="my-3 d-none d-md-block"></div>
+
+
+                            <Link to="/makAdmin" className="btn me-4  d-block">
+                                <button className="btn btn-info text-white p-3">Make Admin</button>
+                            </Link>
                             <div className="my-3 d-none d-md-block"></div>
                         </span>
                     )
                         : (
-                            <span><Link to="/orders" className="btn me-4 ">Orders</Link>
+                            <span className="my-3  d-md-block">
+                                <Link to="/payment" className="btn me-4 d-block">
+                                    <button className="btn btn-info p-3">Order Payment</button>
+                                </Link>
                                 <div className="my-3 d-none d-md-block"></div>
-                                <Link to="/reviews" className="btn me-4 "> Reviews</Link>
+
+                                <Link to="/reviews" className="btn me-4 d-block">
+                                    <button className="btn btn-info p-3">User Reviews</button>
+                                </Link>
                                 <div className="my-3 d-none d-md-block"></div>
-                                <Link to="/payment" className="btn me-4 ">Payment</Link>
+
+                                <Link to="/orders" className="btn me-4 d-block">
+                                    <button className="btn btn-info p-3">All Orders</button>
+                                </Link>
                                 <div className="my-3 d-none d-md-block"></div>
 
                             </span>
                         )
                 }
+                <Link to="/" onClick={logOut} className="btn me-4 d-block">
+                    <button className="btn btn-danger p-3"> logout</button>
 
-
-
-                <Link to="/" onClick={logOut} className="btn me-4 ">logout</Link>
+                </Link>
                 <div className="my-3 d-none d-md-block"></div>
 
             </div>
         </div>
-
     );
 };
 

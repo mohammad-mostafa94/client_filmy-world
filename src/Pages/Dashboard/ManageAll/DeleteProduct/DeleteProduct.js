@@ -29,10 +29,12 @@ const DeleteProduct = () => {
         }
     }
     return (
-        <div className=" row">
-            <Drawers></Drawers>
-            <div>
-                <div className="col-md-9">
+
+        <div className="container-fluid">
+            <div className="row ">
+                <Drawers></Drawers>
+                <div className=" col-md-9 bg-info">
+
                     <h3 className="text-center my-3">Total Films {products.length}</h3>
                     <div className="row">
                         {
@@ -42,6 +44,7 @@ const DeleteProduct = () => {
                             </ProductList>)
                         }
                     </div>
+
 
                 </div>
             </div>

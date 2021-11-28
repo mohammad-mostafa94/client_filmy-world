@@ -32,22 +32,24 @@ const Orders = () => {
 
     }
     return (
-        <div className="row ">
-            <Drawers></Drawers>
-            <div className="col-md-9 m-2">
-                {
-                    orders.length !== 0 ? <h1>{user.displayName} total Orders {orders.length}</h1> :
-                        <h1> {user.displayName} order list is empty</h1>
-                }
-                <div className="row g-3 ">
+        <div className="container-fluid">
+            <div className="row ">
+                <Drawers></Drawers>
+                <div className="col-md-9 bg-info">
                     {
-                        orders.map(order => <Order order={order}
-                            handleDelete={handleDelete}
-                            key={order._id}>
-                        </Order>)
+                        orders.length !== 0 ? <h1 className="text-center">{user.displayName} total Orders {orders.length}</h1> :
+                            <h1 className="text-center"> {user.displayName} order list is empty</h1>
                     }
-                </div>
+                    <div className="row g-3 ">
+                        {
+                            orders.map(order => <Order order={order}
+                                handleDelete={handleDelete}
+                                key={order._id}>
+                            </Order>)
+                        }
+                    </div>
 
+                </div>
             </div>
         </div>
     );

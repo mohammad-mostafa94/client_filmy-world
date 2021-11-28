@@ -43,35 +43,37 @@ const Review = () => {
     };
 
     return (
-        <div className=" row">
-            <Drawers></Drawers>
-            <div className="col-md-9 col-sm-12 ">
-                <div className="row">
-                    <div className="col-sm-12 col-md-12">
-                        <form onSubmit={handleReview} className="bg-light rounded-20 p-5 mt-5">
-                            <h3 className="mt-4 mb-0 text-warning">Please Your Review</h3>
-                            <div className="my-4">
-                                <label htmlFor="name" className="form-label">Full Name</label>
+        <div className="container-fluid">
+            <div className=" row">
+                <Drawers></Drawers>
+                <div className="col-md-9 col-sm-12 bg-info py-2 ">
+                    <div className="row">
+                        <div className="col-sm-12 col-md-12">
+                            <form onSubmit={handleReview} className="bg-light rounded p-5 mt-5">
+                                <h3 className="mt-4 mb-0 text-warning">Please Your Review</h3>
+                                <div className="my-4">
+                                    <label htmlFor="name" className="form-label">Full Name</label>
 
-                                <input type="text" className="form-control" id="name" value={user.displayName} disabled />
-                            </div>
-                            <div className="my-4">
-                                <label htmlFor="email" className="form-label">Email Address</label>
-                                <input value={user.email} disabled type="email" className="form-control" id="email" required />
-                            </div>
-                            <div className="my-4">
-                                <label htmlFor="rating" className="form-label">Rating</label>
-                                <input type="number" min="1" max="5" className="form-control"
-                                    placeholder=" 1 to 5 "
-                                    id="rating"
-                                    ref={refRating} required />
-                            </div>
-                            <label htmlFor="address" className="form-label ">Review</label>
-                            <input style={{ height: "100px" }} ref={refReviews} type="text"
-                                className="form-control " id="address" required />
+                                    <input type="text" className="form-control" id="name" value={user.displayName} disabled />
+                                </div>
+                                <div className="my-4">
+                                    <label htmlFor="email" className="form-label">Email Address</label>
+                                    <input value={user.email} disabled type="email" className="form-control" id="email" required />
+                                </div>
+                                <div className="my-4">
+                                    <label htmlFor="rating" className="form-label">Rating</label>
+                                    <input type="number" min="1" max="5" className="form-control"
+                                        placeholder=" 1 to 5 "
+                                        id="rating"
+                                        ref={refRating} required />
+                                </div>
+                                <label htmlFor="address" className="form-label ">Review</label>
+                                <input style={{ height: "100px" }} ref={refReviews} type="text"
+                                    className="form-control " id="address" required />
 
-                            <button type="submit" className="btn btn-warning mt-4">Send</button>
-                        </form>
+                                <button type="submit" className="btn btn-warning mt-4">Send</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

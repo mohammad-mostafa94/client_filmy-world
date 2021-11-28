@@ -4,7 +4,7 @@ import {
 import './App.css';
 import AuthProvider from "./contexts/AuthProvider";
 import AddAProduct from "./Pages/Dashboard/AddAProduct/AddAProduct";
-import Drawers from "./Pages/Dashboard/Drawers/Drawers";
+import AdminPanel from "./Pages/Dashboard/AdminPanel/AdminPanel";
 import Orders from "./Pages/Dashboard/Drawers/Orders/Orders";
 import Payment from "./Pages/Dashboard/Drawers/Payment/Payment";
 import Review from "./Pages/Dashboard/Drawers/Review/Review";
@@ -35,17 +35,41 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/movies" component={Movies} />
 
-            <PrivateRoute exact path="/dashboard" component={Drawers} />
-            <PrivateRoute exact path="/orders" component={Orders} />
-            <PrivateRoute exact path="/reviews" component={Review} />
-            <PrivateRoute exact path="/payment" component={Payment} />
-            <PrivateRoute exact path="/film/:filmId" component={MovieDetails} />
+            <PrivateRoute exact path="/dashboard">
+              <AdminPanel></AdminPanel>
+            </PrivateRoute>
 
-            <AdminRoute exact path="/makAdmin" component={MakeAdmin} />
-            <AdminRoute exact path="/addProduct" component={AddAProduct} />
-            <AdminRoute exact path="/allOrders" component={ManageAll} />
-            <AdminRoute exact path="/deleteProduct" component={DeleteProduct} />
+            <PrivateRoute exact path="/orders">
+              <Orders></Orders>
+            </PrivateRoute>
 
+            <PrivateRoute exact path="/reviews">
+              <Review></Review>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/payment">
+              <Payment></Payment>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/film/:filmId">
+              <MovieDetails></MovieDetails>
+            </PrivateRoute>
+
+            <AdminRoute exact path="/makAdmin">
+              <MakeAdmin></MakeAdmin>
+            </AdminRoute>
+
+            <AdminRoute exact path="/addProduct">
+              <AddAProduct></AddAProduct>
+            </AdminRoute>
+
+            <AdminRoute exact path="/allOrders">
+              <ManageAll></ManageAll>
+            </AdminRoute>
+
+            <AdminRoute exact path="/manageProduct">
+              <DeleteProduct></DeleteProduct>
+            </AdminRoute>
 
             <Route path="*" component={NotFound} />
           </Switch>
