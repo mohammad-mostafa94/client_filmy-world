@@ -21,9 +21,7 @@ const BestFilms = ({ nowShow }) => {
                     <small>{genre}</small>
                     <div className="d-flex justify-content-between align-items-center">
                         <p className="mt-3">Price: <span className="fw-bold">${price}</span></p>
-
                         <Link to={`/film/${_id}`} onClick={handleDetails} className="btn btn-warning"> Details <i className="fas fa-info-circle"></i></Link>
-
                     </div>
                 </div>
             </div>

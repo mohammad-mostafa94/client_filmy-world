@@ -37,17 +37,17 @@ const Drawers = () => {
                         : (
                             <span className="my-3  d-md-block">
                                 <Link to="/payment" className="btn me-4 d-block">
-                                    <button className="btn btn-info p-3">Order Payment</button>
+                                    <button className="btn w-100  btn-info p-3">Order Payment</button>
                                 </Link>
                                 <div className="my-3 d-none d-md-block"></div>
 
                                 <Link to="/reviews" className="btn me-4 d-block">
-                                    <button className="btn btn-info p-3">User Reviews</button>
+                                    <button className="btn w-100 btn-info p-3">Your Review</button>
                                 </Link>
                                 <div className="my-3 d-none d-md-block"></div>
 
                                 <Link to="/orders" className="btn me-4 d-block">
-                                    <button className="btn btn-info p-3">All Orders</button>
+                                    <button className="btn w-100 btn-info p-3">All Orders</button>
                                 </Link>
                                 <div className="my-3 d-none d-md-block"></div>
 
@@ -55,7 +55,7 @@ const Drawers = () => {
                         )
                 }
                 <Link to="/" onClick={logOut} className="btn me-4 d-block">
-                    <button className="btn btn-danger p-3"> logout</button>
+                    <button className="btn btn-danger w-100 text-bolder p-3"> logout</button>
 
                 </Link>
                 <div className="my-3 d-none d-md-block"></div>

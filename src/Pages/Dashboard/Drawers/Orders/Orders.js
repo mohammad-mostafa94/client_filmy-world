@@ -38,7 +38,7 @@ const Orders = () => {
                 <div className="col-md-9 bg-info">
                     {
                         orders.length !== 0 ? <h1 className="text-center">{user.displayName} total Orders {orders.length}</h1> :
-                            <h1 className="text-center"> {user.displayName} order list is empty</h1>
+                            <h1 className="text-center my-5"> {user.displayName} order list is empty</h1>
                     }
                     <div className="row g-3 ">
                         {

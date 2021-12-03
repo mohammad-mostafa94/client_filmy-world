@@ -2,7 +2,6 @@ import { Rating } from '@mui/material';
 import React from 'react';
 
 const ReviewItem = ({ reviewItem }) => {
-    console.log(reviewItem);
 
     const { userName, rating, review, first, photo } = reviewItem;
     const rate = parseInt(rating);

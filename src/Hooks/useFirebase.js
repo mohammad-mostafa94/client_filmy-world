@@ -65,7 +65,6 @@ const useFirebase = () => {
             }).finally(() => setIsLoading(false));
     }
 
-
     // sign in user
     const signInUser = (email, password, location, history) => {
         setIsLoading(true);
@@ -119,7 +118,8 @@ const useFirebase = () => {
     useEffect(() => {
         fetch(`https://vast-mesa-82001.herokuapp.com/persons/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => setAdmin(data))
+
     }, [user.email]);
 
     const logOut = () => {
