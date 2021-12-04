@@ -26,8 +26,6 @@ const AddAProduct = () => {
     const refTrailer = useRef();
 
 
-
-
     const handleNewFilm = (e) => {
         console.log("e ===", e);
         const name = refName.current.value;
@@ -97,12 +95,16 @@ const AddAProduct = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="image" className="form-label">  Image(url) </label>
+                            <label htmlFor="image" className="form-label">  Image </label>
+                            {/* <label htmlFor="image" className="form-label">  Image(url) </label> */}
                             <input
-                                type="url"
+                                // type="url"
+                                accept="image/*"
+                                type="file"
                                 className="form-control"
                                 id="image"
-                                placeholder="film Img URL"
+                                // placeholder="film Img URL"
+                                placeholder="film Img "
                                 required
                                 ref={refImg}
                             />

@@ -9,7 +9,7 @@ const About = () => {
             <div>
                 <img className="w-25 rounded-circle p-5" src="https://i.ibb.co/HGYkhVH/square.jpg" alt="" />
                 <h2 className="text-white">Mohammad Mostafa</h2>
-                <p>Student of Programming Hero</p>
+                <p>Student of Computer Science and Engineering(CSE)</p>
             </div>
         </div>
     );

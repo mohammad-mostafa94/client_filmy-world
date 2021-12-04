@@ -50,6 +50,9 @@ function App() {
             <PrivateRoute exact path="/payment">
               <Payment></Payment>
             </PrivateRoute>
+            <PrivateRoute exact path="/payment/:orderId">
+              <Payment></Payment>
+            </PrivateRoute>
 
             <PrivateRoute exact path="/film/:filmId">
               <MovieDetails></MovieDetails>

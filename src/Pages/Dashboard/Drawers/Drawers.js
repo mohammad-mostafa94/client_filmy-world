@@ -6,30 +6,30 @@ const Drawers = () => {
     const { logOut, admin } = useAuth();
     return (
 
-        <div className="col-lg-3 bg-warning ">
+        <div className="col-lg-2 bg-warning ">
             <div className="mt-5">
                 {
                     admin ? (
                         <span className="mt-4">
 
                             <Link to="/allOrders" className="btn me-4  d-block">
-                                <button className="btn btn-info text-white p-3">Manage All Orders</button>
+                                <button className="btn w-100 text-bold btn-info text-white p-3">Manage All Orders</button>
                             </Link>
                             <div className="my-3 d-none d-md-block"></div>
 
                             <Link to="/manageProduct" className="btn me-4 d-block">
-                                <button className="btn btn-info text-white p-3">Manage product</button>
+                                <button className="btn w-100 text-bolder btn-info text-white p-3">Manage product</button>
                             </Link>
                             <div className="my-3 d-none d-md-block"> </div>
 
                             <Link to="/addProduct" className="btn me-4 d-block">
-                                <button className="btn btn-info text-white p-3">Add a product</button>
+                                <button className="btn w-100 text-bolder btn-info text-white p-3">Add a product</button>
                             </Link>
                             <div className="my-3 d-none d-md-block"></div>
 
 
                             <Link to="/makAdmin" className="btn me-4  d-block">
-                                <button className="btn btn-info text-white p-3">Make Admin</button>
+                                <button className="btn w-100 text-bolder btn-info text-white p-3">Make Admin</button>
                             </Link>
                             <div className="my-3 d-none d-md-block"></div>
                         </span>
@@ -55,10 +55,11 @@ const Drawers = () => {
                         )
                 }
                 <Link to="/" onClick={logOut} className="btn me-4 d-block">
-                    <button className="btn btn-danger w-100 text-bolder p-3"> logout</button>
+                    <button className="btn btn-danger  w-100 text-bolder p-3"> logout</button>
 
                 </Link>
                 <div className="my-3 d-none d-md-block"></div>
+                <div className="my-3 d-none d-md-block"> <Link to="/" className="btn me-4 d-block">Go Back </Link></div>
 
             </div>
         </div>

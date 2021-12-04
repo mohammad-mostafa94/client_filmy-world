@@ -8,7 +8,7 @@ const AdminPanel = () => {
         <div className="container-fluid">
             <div className="row">
                 <Drawers></Drawers>
-                <div className="col-md-9  bg-info">
+                <div className="col-md-9 bg-info">
                     <div className="container mt-5">
                         <div className="row justify-content-center align-items-center">
                             <div className="text-center">
