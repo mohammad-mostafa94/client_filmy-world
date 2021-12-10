@@ -47,9 +47,9 @@ function App() {
               <Review></Review>
             </PrivateRoute>
 
-            <PrivateRoute exact path="/payment">
+            {/* <PrivateRoute exact path="/payment">
               <Payment></Payment>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute exact path="/payment/:orderId">
               <Payment></Payment>
             </PrivateRoute>

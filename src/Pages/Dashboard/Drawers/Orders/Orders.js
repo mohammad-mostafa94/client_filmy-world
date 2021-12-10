@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
 import Drawers from '../Drawers';
+
 // import Order from './Order';
 
 const Orders = () => {
@@ -37,10 +38,10 @@ const Orders = () => {
         <div className="container-fluid">
             <div className="row ">
                 <Drawers></Drawers>
-                <div className="col-md-9 bg-info">
+                <div className="col-md-9 bg-white">
                     {
                         orders.length !== 0 ?
-                            <h1 className="text-center my-3">{user.displayName}, total Orders:{orders.length}</h1>
+                            <h1 className="text-center my-3">{user.displayName},Your total Orders:{orders.length}</h1>
                             : <h1 className="text-center my-5"> {user.displayName} order list is empty</h1>
                     }
                     {/* <div className="row g-3 ">
@@ -55,7 +56,7 @@ const Orders = () => {
                         <Table sx={{ minWidth: 300 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow >
-                                    <TableCell>Name</TableCell>
+                                    <TableCell>Movie Name</TableCell>
                                     <TableCell>Price</TableCell>
                                     <TableCell>Product Delete</TableCell>
                                     <TableCell>Status</TableCell>
@@ -74,10 +75,10 @@ const Orders = () => {
                                         <TableCell >${order.price}</TableCell>
                                         <TableCell ><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button></TableCell>
                                         <TableCell >{
-                                            order.status ? (<span className="text-success">Shipped</span>) : (<span className="text-danger">Pending</span>)
+                                            order.status ? (<span className="text-success">Shipped <i className="fas fa-check-circle"></i></span>) : (<span className="text-danger"> Pending <i className="fas fa-hourglass-start"></i></span>)
                                         }</TableCell>
                                         <TableCell >{order.payment ? <span className="text-success">Paid</span> :
-                                            <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-info">Pay</button></Link>
+                                            <Link to={`/payment/${order._id}`}><button className="btn btn-info">Pay</button></Link>
                                         }</TableCell>
                                     </TableRow>
                                 ))}

@@ -119,7 +119,6 @@ const useFirebase = () => {
         fetch(`https://vast-mesa-82001.herokuapp.com/persons/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data))
-
     }, [user.email]);
 
     const logOut = () => {

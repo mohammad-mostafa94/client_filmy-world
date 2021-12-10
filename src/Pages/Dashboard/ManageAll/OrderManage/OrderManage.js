@@ -18,7 +18,6 @@ const OrderManage = ({ order, handleDelete, handleStatus }) => {
                         }
                     </p>
                     <button onClick={() => handleStatus(order._id)} className="card-link btn btn-warning">Approved</button>
-
                 </div>
             </div>
         </div>

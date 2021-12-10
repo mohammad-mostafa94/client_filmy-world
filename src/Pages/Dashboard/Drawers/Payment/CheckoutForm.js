@@ -4,8 +4,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from './../../../../Hooks/useAuth';
 
-const CheckoutForm = ({ appointment }) => {
-    const { price, patientName, _id } = appointment;
+const CheckoutForm = ({ order }) => {
+    const { price, name, _id } = order;
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth
@@ -16,7 +16,7 @@ const CheckoutForm = ({ appointment }) => {
     const [processing, setProcessing] = useState(false);
 
     useEffect(() => {
-        fetch('https://agile-plains-37007.herokuapp.com/create-payment-intent', {
+        fetch('https://vast-mesa-82001.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -61,7 +61,6 @@ const CheckoutForm = ({ appointment }) => {
             console.log('[error]', error);
         } else {
             setError('');
-
             console.log('[PaymentMethod]', paymentMethod);
         }
 
@@ -72,7 +71,7 @@ const CheckoutForm = ({ appointment }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: patientName,
+                        name: name,
                         email: user?.email
                     },
                 },
@@ -95,8 +94,8 @@ const CheckoutForm = ({ appointment }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            // const url = `https://agile-plains-37007.herokuapp.com/appointments/${_id}`
-            const url = `https://agile-plains-37007.herokuapp.com/appointments/${_id}`;
+
+            const url = `https://vast-mesa-82001.herokuapp.com/payment/${_id}`;
             axios.put(url, payment)
                 .then(response => {
                     console.log(response);

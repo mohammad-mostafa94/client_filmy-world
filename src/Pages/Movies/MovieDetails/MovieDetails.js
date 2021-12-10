@@ -38,7 +38,7 @@ const MovieDetails = () => {
                     </div>
                     <div className="d-flex justify-content-between">
                         <p className="pt-2">Rotten Tomato: <span className="fw-bold">{tomato}%</span></p>
-                        <a className="btn text-danger fw-bolder" href={"https://www.youtube.com/watch?v=" + trailer} rel="noreferrer" target="_blank"><i className="bi bi-caret-right-square-fill"></i> <i class="fas fa-caret-square-right"></i>  Play Trailer</a>
+                        <a className="btn text-danger fw-bolder" href={"https://www.youtube.com/watch?v=" + trailer} rel="noreferrer" target="_blank"><i className="bi bi-caret-right-square-fill"></i> <i className="fas fa-caret-square-right"></i>  Play Trailer</a>
                     </div>
                     <div>
                         <h4 className="text-secondary">Overview</h4>
