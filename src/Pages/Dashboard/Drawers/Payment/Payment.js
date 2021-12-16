@@ -27,7 +27,7 @@ const Payment = () => {
                 console.log(data)
             });
     }, [orderId]);
-    // const {price, serviceName,name,patientName} = appointment;
+
 
     return (
         <div className="container-fluid">

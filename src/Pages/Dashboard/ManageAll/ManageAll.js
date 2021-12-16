@@ -81,9 +81,9 @@ const ManageAll = () => {
                                                 {order.name}
                                             </TableCell>
                                             <TableCell >${order.price}</TableCell>
-                                            <TableCell ><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button></TableCell>
+                                            <TableCell ><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete <i class="fas fa-trash"></i></button></TableCell>
                                             <TableCell >{
-                                                order.status ? (<span className="text-success">Accepted <i className="fas fa-check-circle"></i></span>) : (<button onClick={() => handleStatus(order._id)} className="btn btn-warning">Accept</button>)
+                                                order.status ? (<span className="text-success">Accepted <i className="fas fa-check-circle"></i></span>) : (<button onClick={() => handleStatus(order._id)} className="btn btn-warning">Accept <i class="fas fa-check"></i></button>)
                                             }</TableCell>
                                             <TableCell >{
                                                 order.status ? (<span className="text-success">Shipped <i className="fas fa-check-circle"></i></span>) : (<span className="text-danger"> Pending <i className="fas fa-hourglass-start"></i></span>)

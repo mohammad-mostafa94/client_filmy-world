@@ -18,12 +18,12 @@ const Drawers = () => {
                             <div className="my-3 d-none d-md-block"></div>
 
                             <Link to="/manageProduct" className="btn me-4 d-block">
-                                <button className="btn w-100 text-bolder btn-info text-white p-3">Manage product</button>
+                                <button className="btn  w-100 text-bolder btn-info text-white p-3">Manage product</button>
                             </Link>
                             <div className="my-3 d-none d-md-block"> </div>
 
                             <Link to="/addProduct" className="btn me-4 d-block">
-                                <button className="btn w-100 text-bolder btn-info text-white p-3">Add a product</button>
+                                <button className="btn w-100  text-bolder btn-info text-white p-3">Add a product </button>
                             </Link>
                             <div className="my-3 d-none d-md-block"></div>
 
