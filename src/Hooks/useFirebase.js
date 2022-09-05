@@ -30,8 +30,6 @@ const useFirebase = () => {
                 // send data to database
                 saveData(email, name, 'PUT');
 
-
-
                 // send name firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -48,22 +46,32 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
-    const googleSignIn = (location, history) => {
-        setIsLoading(true);
 
+
+    // const googleSignIn = (location, history) => {
+    //     setIsLoading(true);
+
+    //     const provider = new GoogleAuthProvider();
+
+    //     signInWithPopup(auth, provider)
+    //         .then((result) => {
+    //             setAuthError('');
+    //             const user = result.user;
+    //             saveData(user.email, user.displayName, 'PUT');
+    //             const destination = location?.state?.from || '/';
+    //             history.replace(destination);
+    //         }).catch((error) => {
+    //             setAuthError(error.message);
+    //         }).finally(() => setIsLoading(false));
+    // }
+    const googleSignIn = () => {
+        setIsLoading(true);
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                setAuthError('');
-                const user = result.user;
-                saveData(user.email, user.displayName, 'PUT');
-                const destination = location?.state?.from || '/';
-                history.replace(destination);
-            }).catch((error) => {
-                setAuthError(error.message);
-            }).finally(() => setIsLoading(false));
+        return signInWithPopup(auth, provider)
+            .finally(() => setIsLoading(false));
     }
+
 
     // sign in user
     const signInUser = (email, password, location, history) => {

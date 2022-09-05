@@ -5,7 +5,6 @@ import Drawers from "../Drawers/Drawers";
 const AddAProduct = () => {
     const history = useHistory();
 
-
     const refName = useRef();
     const refImg = useRef();
     const refId = useRef();
@@ -24,7 +23,6 @@ const AddAProduct = () => {
     const refRuntime = useRef();
 
     const refTrailer = useRef();
-
 
     const handleNewFilm = (e) => {
         console.log("e ===", e);
@@ -95,16 +93,16 @@ const AddAProduct = () => {
                             />
                         </div>
                         <div className="col-md-6">
-                            <label htmlFor="image" className="form-label">  Image </label>
-                            {/* <label htmlFor="image" className="form-label">  Image(url) </label> */}
+                            {/* <label htmlFor="image" className="form-label">  Image </label> */}
+                            <label htmlFor="image" className="form-label">  Image(url) </label>
                             <input
-                                // type="url"
-                                accept="image/*"
-                                type="file"
+                                type="url"
+                                // accept="image/*"
+                                // type="file"
                                 className="form-control"
                                 id="image"
-                                // placeholder="film Img URL"
-                                placeholder="film Img "
+                                placeholder="film Img URL"
+                                // placeholder="film Img "
                                 required
                                 ref={refImg}
                             />

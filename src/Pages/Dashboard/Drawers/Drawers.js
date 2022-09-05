@@ -36,10 +36,7 @@ const Drawers = () => {
                     )
                         : (
                             <span className="my-3  d-md-block">
-                                {/* <Link to="/payment" className="btn me-4 d-block">
-                                    <button className="btn w-100  btn-info p-3">Order Payment</button>
-                                </Link>
-                                <div className="my-3 d-none d-md-block"></div> */}
+
 
                                 <Link to="/reviews" className="btn me-4 d-block">
                                     <button className="btn w-100 btn-info p-3">Your Review</button>

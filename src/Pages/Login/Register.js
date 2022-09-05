@@ -10,6 +10,17 @@ const Register = () => {
     const location = useLocation();
     const history = useHistory();
 
+    // handle redirect URL 
+
+    const redirect_URL = location.state?.from || '/';
+    const googleSignIn1 = () => {
+
+        googleSignIn()
+            .then(result => {
+                history.push(redirect_URL);
+            })
+    }
+
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -85,7 +96,8 @@ const Register = () => {
                             <Link style={{ textDecoration: "none" }} to="/login">
                                 <Button className="mt-3" variant="text" >Already register ? Please Login</Button>
                             </Link>
-                            <button style={{ width: "90%" }} onClick={googleSignIn} className="btn btn-warning my-2 text-white">Google Sign In</button>
+                            <button style={{ width: "90%" }} onClick={googleSignIn1} className="btn btn-warning my-2 text-white">Google Sign In</button>
+                            {/* <button style={{ width: "90%" }} onClick={googleSignIn} className="btn btn-warning my-2 text-white">Google Sign In</button> */}
                         </form>}
 
 
